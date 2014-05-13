@@ -24,9 +24,8 @@ public class Thread1<T> extends PooledThread {
                     Logger.getLogger(Thread1.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 String str = "default";
-                synchronized (new Object()){
                     str = (String) getNextJob();
-                }
+                
                 System.out.println(str);
 
             }
