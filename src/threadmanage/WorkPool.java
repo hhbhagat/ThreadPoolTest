@@ -28,10 +28,10 @@ public class WorkPool<T> {
         iterWorkList = workList.listIterator();
     }
 
-    public T getSomeWork() {
-        synchronized (getwork) {
+    public synchronized T getSomeWork() {
+//        synchronized (getwork) {
             return iterWorkList.next();  //This gives some work/work info to the calling method, and gives out whatever T is from the iterWorkList iterator.
-        }
+//        }
     }
 
     public void addWork(T job) { //Can synchronously add work to the "queue" without causing errors due to parallel access. 
